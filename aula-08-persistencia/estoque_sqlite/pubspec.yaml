@@ -1,0 +1,23 @@
+name: estoque_sqlite
+description: "Estoque de Insumos — CRUD básico com SQLite (aula guiada, IF Goiano Ceres)."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  sqflite: ^2.3.0                   # SQLite nativo (Android/iOS)
+  sqflite_common_ffi: ^2.3.0        # SQLite no desktop (Linux/Windows/macOS)
+  path: ^1.9.0                      # monta o caminho do arquivo .db
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

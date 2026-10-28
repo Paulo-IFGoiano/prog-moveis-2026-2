@@ -1,0 +1,13 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+
+# IDE / SO
+.idea/
+.vscode/
+*.iml
+.DS_Store
