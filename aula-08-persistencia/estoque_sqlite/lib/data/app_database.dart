@@ -1,9 +1,7 @@
 // ============================================================
-// CAMADA DE DADOS: AppDatabase  (PROJETO-INICIAL)
-// Abre o banco e cria a tabela.
-//
-// >>> SUA TAREFA (Passo 4): escrever o CREATE TABLE no onCreate.
-//     O resto (abrir o banco) já está pronto.
+// CAMADA DE DADOS: AppDatabase  (camada data)
+// Único lugar que "conhece" o arquivo .db: abre o banco e cria a
+// tabela. Os DAOs pedem a conexão a ela.
 // ============================================================
 
 import 'package:path/path.dart' as p;
@@ -27,15 +25,14 @@ class AppDatabase {
       caminho,
       version: 1,
       onCreate: (db, versao) async {
-        // ===== PASSO 4: crie a tabela "produto" =====
-        // Colunas: id (PK AUTOINCREMENT), nome (TEXT NOT NULL),
-        //          quantidade (INTEGER NOT NULL), preco (REAL NOT NULL).
-        //
-        // await db.execute('''
-        //   CREATE TABLE produto (
-        //     ...
-        //   )
-        // ''');
+        await db.execute('''
+          CREATE TABLE produto (
+            id          INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome        TEXT NOT NULL,
+            quantidade  INTEGER NOT NULL,
+            preco       REAL NOT NULL
+          )
+        ''');
       },
     );
   }
